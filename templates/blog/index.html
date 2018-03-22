@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block title %}
     <title>index</title>
@@ -9,24 +10,31 @@
 
         <div class="row">
             <div class="col-md-12">
-                col-md-12
+
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-8">
-                col-md-8
-                <br/>
 
-                {% for post in post_list %}
-                    {{ post.title }}<br/>
-                {% empty %}
-                    暂无博文！
-                {% endfor %}
+                <ul>
+                    {% for post in post_list %}
+                        <li>
+                            <a href="{% url 'blog:detail' post.pk %}">
+                                {{ post.title }}
+                            </a>
+                            <br/>
+                            {{ post.excerpt|safe }}
+                        </li>
+                    {% empty %}
+                        暂无博文！
+                    {% endfor %}
+                </ul>
 
             </div>
+
             <div class="col-md-4">
-                col-md-4
+
             </div>
         </div>
 

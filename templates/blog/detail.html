@@ -1,0 +1,72 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        {#BLURR丶YE#}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h1 text-center">
+                    BLURR丶YE
+                </div>
+            </div>
+        </div>
+
+        {#导航#}
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">New</a>
+                        </div>
+
+                        <div class="navbar-header">
+                            <span class="navbar-brand">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        </div>
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Category</a>
+                        </div>
+
+                        <div class="navbar-header">
+                            <span class="navbar-brand">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        </div>
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Mail</a>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        {#导航条下方的主体部分#}
+        <div class="row">
+
+            {#左#}
+            <div class="col-md-3">
+
+            </div>
+
+            {#中，正文#}
+            <div class="col-md-6">
+
+                {{ post.body|safe }}
+
+            </div>
+
+            {#右#}
+            <div class="col-md-3">
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
