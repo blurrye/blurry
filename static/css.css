@@ -1,4 +1,18 @@
+/*blurry*/
+#blurry {
+    font-size: 500%;
+    padding: 50px 0 50px 0;
+}
+
 /*导航条居中*/
-.navbar {
+#navbar {
     display: flex;
+}
+
+/*导航条内容*/
+#navbar a {
+    font-size: 150%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
 }
