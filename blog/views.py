@@ -11,3 +11,8 @@ def index(request):
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/detail.html', locals())
+
+
+def taki(request):
+    post = get_object_or_404(Post, pk=1)
+    return render(request, 'blog/TAKI.html', locals())

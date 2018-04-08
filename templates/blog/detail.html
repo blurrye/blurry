@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="blurry" class="text-center">
-                    BLURR丶YE
+                    BLURR YE
                 </div>
             </div>
         </div>
@@ -55,20 +55,33 @@
                 <div class="text-center">
                     <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521810423278&di=aacc257f72a0f4f762ba04bb4dd0cbe2&imgtype=0&src=http%3A%2F%2Fp4.gexing.com%2FG1%2FM00%2F9D%2FBA%2FrBACE1J94jrDGTMTAABS_00Yi-E359.jpg" alt="眼镜">
                 </div>
-                <div>
-                    <br>
-                    <strong>BLURRYE</strong>
-                </div>
-                <hr>
-                <div>
-                    shgagiaighaihaihiah
-                    <br>
-                    这里应该是一些个人简介吧，写些什么呢？以后再写吧！
+
+                <div id="left-content">
+                    <div>
+                        <br />
+                        <strong>BLURRYE</strong>
+                    </div>
+                        <hr id="hr-left" />
+                    <div>
+                        只要是在锅里煎过的鸡蛋，
+                        <br />
+                        不管变成什么样子都是煎鸡蛋哦！
+                    </div>
                 </div>
             </div>
 
             {#中，正文#}
             <div class="col-md-6">
+
+                {{ post.excerpt|safe }}
+
+                <br /><br />
+
+{#                <div class="pull-right small">#}
+{#                    {{ post.category }} {{ post.created_time }}#}
+{#                </div>#}
+{#                <br />#}
+                <hr id="hr-middle" />
 
                 {{ post.body|safe }}
 
