@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from ckeditor.fields import RichTextField
+
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
@@ -26,13 +28,15 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    body = models.TextField()
+    # body = models.TextField()
+    body = RichTextField()
 
     created_time = models.DateTimeField(auto_now_add=True)
     modified_time = models.DateTimeField(auto_now=True)
 
     # 文章摘要
-    excerpt = models.CharField(max_length=200, blank=True)
+    # excerpt = models.CharField(max_length=200, blank=True)
+    excerpt = RichTextField()
 
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     tags = models.ManyToManyField(Tag, blank=True)
