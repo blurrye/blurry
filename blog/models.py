@@ -44,6 +44,9 @@ class Post(models.Model):
     # 文章作者,从 django.contrib.auth.models 导入
     author = models.ForeignKey(User)
 
+    # 原作者,转载文章时可以填原作者
+    authorship = models.CharField(max_length=20, blank=True)
+
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name

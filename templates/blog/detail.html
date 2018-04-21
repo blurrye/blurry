@@ -53,18 +53,17 @@
             {#左#}
             <div class="col-md-3">
                 <div class="text-center">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521810423278&di=aacc257f72a0f4f762ba04bb4dd0cbe2&imgtype=0&src=http%3A%2F%2Fp4.gexing.com%2FG1%2FM00%2F9D%2FBA%2FrBACE1J94jrDGTMTAABS_00Yi-E359.jpg" alt="眼镜">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521810423278&di=aacc257f72a0f4f762ba04bb4dd0cbe2&imgtype=0&src=http%3A%2F%2Fp4.gexing.com%2FG1%2FM00%2F9D%2FBA%2FrBACE1J94jrDGTMTAABS_00Yi-E359.jpg"
+                         alt="眼镜">
                 </div>
 
                 <div id="left-content">
-                    <div>
-                        <br />
+                    <div id="nickname">
                         <strong>BLURRYE</strong>
                     </div>
-                        <hr id="hr-left" />
-                    <div>
+                    <div id="desc">
                         只要是在锅里煎过的鸡蛋，
-                        <br />
+                        <br/>
                         不管变成什么样子都是煎鸡蛋哦！
                     </div>
                 </div>
@@ -73,17 +72,23 @@
             {#中，正文#}
             <div class="col-md-6">
 
-                {{ post.excerpt|safe }}
+                <div id="post-excerpt">
+                    {{ post.excerpt|safe }}
+                </div>
 
-                <br /><br />
+                <div id="post-body">
 
-{#                <div class="pull-right small">#}
-{#                    {{ post.category }} {{ post.created_time }}#}
-{#                </div>#}
-{#                <br />#}
-                <hr id="hr-middle" />
+                    <div class="text-center">
+                        <h1>{{ post.title }}</h1>
+                        {% if post.authorship %}
+                            <small>作者：{{ post.authorship }}</small>
+                            <br><br>
+                        {% endif %}
+                    </div>
 
-                {{ post.body|safe }}
+                    {{ post.body|safe }}
+
+                </div>
 
             </div>
 
